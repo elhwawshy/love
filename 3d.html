@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="carousel">
+
+        <div class="carousel-control-button left"><input type="radio" name="carousel-control-input"></div>
+        <div class="carousel-control-button right"><input type="radio" name="carousel-control-input" checked></div>
+
+        <div class="carousel-rotation-direction">
+
+            <ul class="carousel-item-wrapper" style="--_num-elements: 11">
+
+                <li class="carousel-item"
+                    style="--_index: 1; --_image-url: url('img/photo_2024-11-08_21-37-59 (2).jpg ')"><a
+                        href="pages/10.html" target="_blank">Architecture Example 1</a></li>
+                <li class="carousel-item" style="--_index: 2; --_image-url: url('img/9.jpg')"><a href="pages/9.html"
+                        target="_blank">Architecture Example 2</a></li>
+                <li class="carousel-item" style="--_index: 3; --_image-url: url('img/8.jpg')"><a href="pages/8.html"
+                        target="_blank">Architecture Example 3</a></li>
+                <li class="carousel-item" style="--_index: 4; --_image-url: url('img/7.jpg')"><a href="pages/7.html"
+                        target="_blank">Architecture Example 4</a></li>
+                <li class="carousel-item" style="--_index: 5; --_image-url: url('img/6.jpg')"><a href="pages/6.html"
+                        target="_blank">Architecture Example 5</a></li>
+                <li class="carousel-item" style="--_index: 6; --_image-url: url('img/nono.jpg')"><a href="pages/5.html"
+                        target="_blank">Architecture Example 6</a></li>
+                <li class="carousel-item" style="--_index: 7; --_image-url: url('img/4.jpg')"><a href="pages/4.html"
+                        target="_blank">Architecture Example 7</a></li>
+                <li class="carousel-item" style="--_index: 8; --_image-url: url('img/3.jpg')"><a href="pages/3.html"
+                        target="_blank">Architecture Example 8</a></li>
+                <li class="carousel-item" style="--_index: 9; --_image-url: url('img/2.jpg')"><a href="pages/2.html"
+                        target="_blank">Architecture Example 9</a></li>
+                <li class="carousel-item" style="--_index: 10; --_image-url: url('img/bibi.jpg')"><a href="pages/1.html"
+                        target="_blank">Architecture Example 10</a></li>
+                <li class="carousel-item" style="--_index: 11; --_image-url: url('img/5.jpg')"><a
+                        href="pages/index.html" target="_blank">Architecture Example 11</a></li>
+
+                <li class="carousel-ground"></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="button">
+        <button id="playButton">BesTy</button>
+    </div>
+
+    <div class="">
+        <video id="videoPlayer" controls autoplay hidden loop>
+            <source src="اسمي.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        // تعريف الزر والفيديو
+        const playButton = document.getElementById('playButton');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        // إضافة حدث عند الضغط على الزر لتشغيل الأنميشن
+        playButton.addEventListener('click', function () {
+            // إعادة الأنميشن للكاروسيل
+            document.querySelector('.carousel .carousel-item-wrapper').style.animationPlayState = 'running';
+            // تشغيل الفيديو
+            videoPlayer.play();
+        });
+
+        // إيقاف الأنميشن عند تحميل الصفحة
+        window.addEventListener('load', function () {
+            document.querySelector('.carousel .carousel-item-wrapper').style.animationPlayState = 'paused';
+        });
+    </script>
+
+    <script src="jquery.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</body>
+
+</html>
